@@ -10,9 +10,22 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- Common Header -->
+     <header class="p-4">
+        <ul>
+            <li><a th:href="@{'/home'}">Home</a></li>
+            <li><a th:href="@{'/about'}">About</a></li>
+            <li><a th:href="@{'/services'}">Services</a></li>
+         </ul>
+     </header>
     <!-- Main Content -->
-     <section th:replace="${content}"></section>
+     <div class="p-4">
+        <section th:replace="${content}"></section>
+     </div>
+     
 
+     <!-- Common Footer -->
+      <footer class="p-4">Learn Code With Tushar Mahajan</footer>
     <!-- FlowBite JS Content -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <!-- Script comming from the Page -->
