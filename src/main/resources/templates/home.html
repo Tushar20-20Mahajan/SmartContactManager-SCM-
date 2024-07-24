@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 50%;
+            padding: 30px;
+            background-color: #e2e2e2;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-th-text="${name}">Welcome To Home Page</h1>
+        <p>You Tube Channel -: <span data-th-text="${YouTube}"></span></p>
+        <p>Git Hub -: <span th:text="${GitHub}"></span></p>
+        <a th:href="${GitHub}">Click to Open</a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quod ex ratione delectus qui cupiditate mollitia? Eius aut blanditiis reprehenderit voluptatibus reiciendis, sequi eaque quis sunt rem mollitia minus adipisci similique praesentium necessitatibus in voluptatum dignissimos accusamus. Inventore perspiciatis repellendus architecto, dolorum accusantium maiores distinctio, facilis enim expedita amet aliquid!</p>
+        
+    </div>
+    
+</body>
+</html>
