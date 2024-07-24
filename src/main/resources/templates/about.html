@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{Base::parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCM-About</title>
 </head>
 <body>
-    <h1>This is About Page</h1>
-    <hr>
-    <!-- Using Fragments -->
-     <div class="host-tag" th:insert="~{base::parent(~{::section})}">
-        <section>
-            <h1>This is Heading of the Dynamic Content</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, placeat consequatur. Laborum, dolore nesciunt nemo dicta minima et veritatis dignissimos, ullam consectetur maiores tenetur blanditiis, voluptas reprehenderit. Exercitationem, possimus repellat.</p>
-        </section>
-        
-     </div>
+    <section id="content">
+        <h1>Welcome To About Page</h1>
+    </section>
+
+    <!-- Script JS -->
+    <script>
+        console.log("About Page");
+    </script>
 </body>
 </html>

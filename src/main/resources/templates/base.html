@@ -1,8 +1,21 @@
-<div class="parent-fragment" th:fragment="parent(content)">
-    <h1>This is parent fragment</h1>
-    <p>Lorem ipsum dolor sit amet,  reprehenderit excepturi e rerum doloribus.</p>
-    <!-- <p>The Value fo x is <span th:text="${x}"></span></p>
-    <p>The Value fo y is <span th:text="${y}"></span></p> -->
-    <div class="Host-Tag" th:replace="${content}"></div>
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Tushar SCM</title>
+    <!-- Tailwind CSS output  -->
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <!-- FlowBite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Main Content -->
+     <section th:replace="${content}"></section>
 
-</div>
+    <!-- FlowBite JS Content -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <!-- Script comming from the Page -->
+     <th:block th:replace="${script}"></th:block>
+</body>
+</html>
