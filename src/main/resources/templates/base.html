@@ -1,34 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="parent(content,title,script)" xmlns="http://www.thymleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  lang="en"
+  th:fragment="parent(content, title, script)"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:replace="${title}">Tushar SCM</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
+    <!-- Description KeyWord -->
+    <meta
+      name="description"
+      content="
+  Discover my smart contact manager web application, designed to manage contacts efficiently and effectively on the cloud. Experience the seamless integration of technology and user-friendly design in this innovative project."
+    />
+    <meta
+      name="keywords"
+      content="Smart Contact Manager, Web Application, Contacts Management, Cloud, HTML, CSS, JavaScript, Projects , AWS , Coludinary , Contact details , SCM , PAgination , Dark , Light , Theam , Provde Feedback , SpringBoot  , Spring Framework , SpringMVC , Sprinhg DATA JPA ,ORM ,OAuth , Social Login , Thymleaf , Tailwind CSS , Flowbits Components , My SQL ,DataBase "
+    />
+    <meta name="author" content="Tushar Mahajan" />
     <!-- Tailwind CSS output  -->
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <link rel="stylesheet" th:href="@{/css/output.css}" />
     <!-- FlowBite CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Common Header -->
-     <header class="p-4">
-        <ul>
-            <li><a th:href="@{'/home'}">Home</a></li>
-            <li><a th:href="@{'/about'}">About</a></li>
-            <li><a th:href="@{'/services'}">Services</a></li>
-         </ul>
-     </header>
+    <header class="p-4">
+      <ul>
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/services}">Services</a></li>
+      </ul>
+    </header>
     <!-- Main Content -->
-     <div class="p-4">
-        <section th:replace="${content}"></section>
-     </div>
-     
-
-     <!-- Common Footer -->
-      <footer class="p-4">Learn Code With Tushar Mahajan</footer>
+    <div class="p-4">
+      <section th:replace="${content}"></section>
+    </div>
+    <!-- Common Footer -->
+    <footer class="p-4">Learn Code With Tushar Mahajan</footer>
     <!-- FlowBite JS Content -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-    <!-- Script comming from the Page -->
-     <th:block th:replace="${script}"></th:block>
-</body>
+    <!-- Script coming from the Page -->
+    <th:block th:replace="${script}"></th:block>
+  </body>
 </html>
