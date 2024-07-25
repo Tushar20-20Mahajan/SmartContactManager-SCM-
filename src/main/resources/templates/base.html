@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html
+  class="light"
   lang="en"
   th:fragment="parent(content, title, script)"
   xmlns:th="http://www.thymeleaf.org"
@@ -29,24 +30,30 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
       rel="stylesheet"
     />
+
+    <!-- FontAwsome CSS link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
-    <!-- Common Header -->
-    <header class="p-4">
-      <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/about}">About</a></li>
-        <li><a th:href="@{/services}">Services</a></li>
-      </ul>
-    </header>
+  <body class="dark:bg-gray-900 dark:text-white">
+    <!-- Host Tag Header -->
+    <div class="HostTagHeader" th:replace="navbar :: navbar"></div>
     <!-- Main Content -->
-    <div class="p-4">
+    <div class="p-4 mt-16">
+      <!-- Added mt-16 for top margin -->
       <section th:replace="${content}"></section>
     </div>
     <!-- Common Footer -->
     <footer class="p-4">Learn Code With Tushar Mahajan</footer>
     <!-- FlowBite JS Content -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <!-- All the external used JS in the Project from /src/main/resources/static/js/script.js -->
+    <script th:src="@{/JS/script.js}"></script>
     <!-- Script coming from the Page -->
     <th:block th:replace="${script}"></th:block>
   </body>

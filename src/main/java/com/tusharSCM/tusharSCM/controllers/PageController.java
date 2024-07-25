@@ -35,5 +35,28 @@ public class PageController {
         System.out.println("Services Page Handler");
         return "Services";
     }
+
+    // Route For Contact
+    @RequestMapping("/contact")
+    public String contactPage(){
+        System.out.println("Contact Page Handler");
+        return "Contact";
+    }
+
+    // Route For Login
+    @RequestMapping("/login")
+    public String loginPage(){
+        System.out.println("Login Page Handler");
+        return "Login";
+    }
+
+    // Route For SignUp
+    @RequestMapping("/signUp")
+    public String signUpPage(){
+        System.out.println("SignUp Page Handler");
+        return "SignUp";
+    }
+
+    
     
 }
