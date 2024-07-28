@@ -13,7 +13,7 @@
         <div class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-4">
           <!-- Card Code Starts -->
           <div
-            class="block p-6 border-t-8 border-blue-700 bg-white   rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            class="block p-6 border-t-8 border-blue-700 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <h5
               class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -24,7 +24,12 @@
               Let's start managing the contact on cloud
             </p>
 
-            <form class="max-w-sm mx-auto mt-3" action="">
+            <form
+              data-th-action="@{/do-register}"
+              method="post"
+              th:object="${userForm}"
+              class="max-w-sm mx-auto mt-3"
+            >
               <div class="mb-3">
                 <label
                   for="name"
@@ -34,6 +39,7 @@
                 <input
                   type="text"
                   id="name"
+                  th:field="*{name}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter Here"
                   required
@@ -48,6 +54,7 @@
                 <input
                   type="email"
                   id="email"
+                  th:field="*{email}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@flowbite.com"
                   required
@@ -62,6 +69,7 @@
                 <input
                   type="password"
                   id="password"
+                  th:field="*{password}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Your Secret Key"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
@@ -78,6 +86,7 @@
                 <input
                   type="tel"
                   id="phoneNumber"
+                  th:field="*{phoneNumber}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter 10-digit phone number"
                   pattern="\d{10}"
@@ -94,29 +103,31 @@
                 <textarea
                   id="about"
                   rows="4"
+                  th:field="*{about}"
                   class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write here..."
                 ></textarea>
               </div>
               <div class="mb-3 flex justify-center gap-2">
                 <button
-                type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Submit
-              </button>
+                  type="submit"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Submit
+                </button>
 
-              <button
-                type="reset"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Reset
-              </button>
+                <button
+                  type="reset"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Reset
+                </button>
               </div>
             </form>
             <div class="flex justify-center">
               <p class="font-normal text-gray-500 dark:text-gray-300">
-                Already have an account <a href="/login" class="text-blue-500 underline">login?</a>
+                Already have an account
+                <a href="/login" class="text-blue-500 underline">login?</a>
               </p>
             </div>
           </div>
