@@ -7,9 +7,11 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tusharSCM.tusharSCM.entities.User;
+import com.tusharSCM.tusharSCM.helpers.AppConstants;
 import com.tusharSCM.tusharSCM.helpers.ResourceNotFoundException;
 import com.tusharSCM.tusharSCM.repositries.UserRepository;
 
@@ -26,6 +28,9 @@ public class UserServiceImplementation implements UserService
     @Autowired
     private UserRepository userRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -36,6 +41,13 @@ public class UserServiceImplementation implements UserService
 
         // encode password 
         //user.setPassword(userId);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        // set the user role 
+        user.setRoleList(List.of(AppConstants.ROLE_USER));
+
+        // Provider
+        logger.info(user.getProvider().toString());
 
         // set users profile pic 
         //user.setProfilePic(url);
