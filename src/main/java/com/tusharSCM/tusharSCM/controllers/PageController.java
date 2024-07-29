@@ -3,6 +3,7 @@ package com.tusharSCM.tusharSCM.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import com.tusharSCM.tusharSCM.helpers.MessageType;
 import com.tusharSCM.tusharSCM.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 public class PageController {
@@ -76,11 +78,16 @@ public class PageController {
     // Handler for SignUp -> /do-register
     // Processing Register
     @RequestMapping(value = "/do-register", method = RequestMethod.POST)
-    public String processRegister(@ModelAttribute UserForm userForm , HttpSession session) {
+    public String processRegister(@Valid @ModelAttribute UserForm userForm,BindingResult rBindingResult , HttpSession session) {
         System.out.println("Processing Registration");
         // Fetch the data from the form
         System.out.println(userForm);
         // Validate the data and then save it in the data base
+        // Validate before SigniUp
+        if(rBindingResult.hasErrors()){
+            return "signUp";
+        }
+
         // Extract the data from the userForm and add it into user
         User user = new User();
         user.setName(userForm.getName());

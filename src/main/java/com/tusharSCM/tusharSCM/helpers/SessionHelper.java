@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import io.micrometer.core.ipc.http.HttpSender.Request;
 import jakarta.servlet.http.HttpSession;
 
 @Component
