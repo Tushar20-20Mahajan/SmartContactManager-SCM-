@@ -100,7 +100,7 @@ public class SecurityConfiguration {
             // public void onAuthenticationSuccess(HttpServletRequest request,
             // HttpServletResponse response,
             // Authentication authentication) throws IOException, ServletException {
-            // // TODO Auto-generated method stub
+            //   Auto-generated method stub
             // throw new UnsupportedOperationException("Unimplemented method
             // 'onAuthenticationSuccess'");
             // }

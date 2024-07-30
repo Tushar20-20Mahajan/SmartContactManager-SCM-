@@ -15,7 +15,7 @@ public class SessionHelper {
             HttpSession session = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest().getSession();
             session.removeAttribute("message");
         } catch (Exception e) {
-            // TODO: handle exception
+           
             System.out.println("Error in Session Helper: " + e);
             e.printStackTrace();
         }
