@@ -64,7 +64,7 @@ public class User implements UserDetails{
 
     // Validation
     @Builder.Default
-    private boolean enabled = false;
+    private boolean enabled = true;
 
     @Builder.Default
     private boolean emailVerified = false;
