@@ -1,7 +1,6 @@
 package com.tusharSCM.tusharSCM.entities;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
