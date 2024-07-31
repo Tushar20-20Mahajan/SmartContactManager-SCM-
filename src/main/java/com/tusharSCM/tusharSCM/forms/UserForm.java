@@ -38,7 +38,7 @@ public class UserForm {
     @Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits")
     private String phoneNumber;
 
-    @NotBlank(message = "Description is required")
-    @Size(min = 100, message = "Description must be at least 100 characters")
+    //@NotBlank(message = "Description is required")
+    //@Size(min = 100, message = "Description must be at least 100 characters")
     private String about;
 }

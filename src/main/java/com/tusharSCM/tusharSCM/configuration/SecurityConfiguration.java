@@ -34,6 +34,10 @@ public class SecurityConfiguration {
     @Autowired
     private SecurityCustomUserDetailService userDetailService;
 
+    @Autowired
+        private OAuthAuthenticationSuccessHandler oAuthHandler;
+
+
     // Configuration of authentication provider for Spring Security
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -51,6 +55,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
+        
         // Configuration
         // Configured the URLs which will be public and which ones will be
         // restricted/authenticated
@@ -107,6 +112,13 @@ public class SecurityConfiguration {
 
             // });
 
+        });
+
+        // OAuth2 Configuration
+        //Default 
+        httpSecurity.oauth2Login(oauthGoogle -> {
+            oauthGoogle.loginPage("/login");
+            oauthGoogle.successHandler(oAuthHandler);
         });
 
         return httpSecurity.build();
