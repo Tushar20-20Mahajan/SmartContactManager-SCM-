@@ -49,7 +49,7 @@ public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessH
         userInfo.setName(name);
         userInfo.setEmail(email);
         userInfo.setProfilePic(picture);
-        userInfo.setPassword(picture);
+        userInfo.setPassword("password"+name+user.getName());
         userInfo.setUserId(UUID.randomUUID().toString());
         userInfo.setProvider(Providers.GOOGLE);
         userInfo.setEnabled(true);
