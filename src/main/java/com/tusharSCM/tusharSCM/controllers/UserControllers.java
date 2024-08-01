@@ -1,5 +1,6 @@
 package com.tusharSCM.tusharSCM.controllers;
 
+import org.springframework.boot.actuate.web.exchanges.HttpExchange.Principal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,8 +12,10 @@ public class UserControllers {
     // User Dashboard Page 
 
     @RequestMapping(value = "/dashboard" , method = RequestMethod.GET)
-    public String userDashboard() {
+    public String userDashboard(Principal principal) {
         System.out.println("User Dashboard Handler");
+        String name = principal.getName();
+        System.out.println("User name :" +name);
         return "/user/dashboard";
     }
 
