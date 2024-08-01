@@ -110,7 +110,7 @@ public class PageController {
         // return message "Registration Successful" and redirect to login page
 
         // add the success or error message (we can also use request but here we will be using session)
-        Message message = Message.builder().content("Registration Successful").type(MessageType.blue).build();
+        Message message = Message.builder().content("Registration Successful").type(MessageType.green).build();
         session.setAttribute("message", message);
 
         // redirect to signUp page 

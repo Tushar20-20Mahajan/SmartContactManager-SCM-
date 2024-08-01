@@ -41,7 +41,14 @@
   </head>
   <body class="bg-gray-100 dark:bg-gray-900 dark:text-white">
     <!-- Host Tag Header -->
-    <div class="HostTagHeader" th:replace="~{navbar :: navbar}"></div>
+     <!-- If the user is Logged In use /user/user_navbar -->
+      <div th:if="${loggedInUser}">
+        <div class="HostTagHeader" th:replace="~{user/user_navbar :: user-navbar}"></div>
+      </div>
+     <!-- If the user is not logged in then user default-->
+    <div th:unless="${loggedInUser}">
+      <div class="HostTagHeader" th:replace="~{navbar :: navbar}"></div>
+    </div>
     <!-- Main Content -->
     <div class="p-4 mt-16">
       <!-- Added mt-16 for top margin -->

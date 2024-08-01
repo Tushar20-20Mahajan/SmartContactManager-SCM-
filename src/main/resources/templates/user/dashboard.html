@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <H1>This is USer DashBoard Page.</H1>
-    <h1 th:text="${loggedInUser.name}"></h1>
-    <h1 th:text="${loggedInUser.email}"></h1>
-    <h1 th:text="${loggedInUser.about}"></h1>
-    <button> <a th:href="@{'/logout'}">Logout</a></button>
-</body>
+<html
+  lang="en"
+  th:replace="~{Base::parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <section id="content">
+      <h1>This is user Dashboard page</h1>
+      <h1 th:text="${loggedInUser.name}"></h1>
+      <h1 th:text="${loggedInUser.email}"></h1>
+      <h1 th:text="${loggedInUser.about}"></h1>
+      <button><a th:href="@{'/logout'}">Logout</a></button>
+    </section>
+
+    <!-- Script JS -->
+    <script>
+      console.log("Dashboard Page");
+    </script>
+  </body>
 </html>
