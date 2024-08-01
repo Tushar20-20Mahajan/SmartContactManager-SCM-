@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>This is user profile page</h1>
+    <h1 th:text="${loggedInUser.name}"></h1>
+    <h1 th:text="${loggedInUser.email}"></h1>
+    <h1 th:text="${loggedInUser.about}"></h1>
+    <button> <a th:href="@{'/logout'}">Logout</a></button>
 </body>
 </html>
