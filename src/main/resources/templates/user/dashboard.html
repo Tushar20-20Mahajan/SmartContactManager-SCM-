@@ -8,12 +8,23 @@
   </head>
 
   <body>
-    <section id="content">
+    <section id="content" class="sm:pl-64">
+      <!-- Sidebar -->
+      <div th:if="${loggedInUser}">
+        <div
+          class="HostTagSidebar"
+          th:replace="~{user/sidebar :: sidebar}"
+        ></div>
+      </div>
+
+      <!-- Content -->
+
+      <div>
       <h1>This is user Dashboard page</h1>
       <h1 th:text="${loggedInUser.name}"></h1>
       <h1 th:text="${loggedInUser.email}"></h1>
-      <h1 th:text="${loggedInUser.about}"></h1>
       <button><a th:href="@{'/logout'}">Logout</a></button>
+      </div>
     </section>
 
     <!-- Script JS -->
